@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace ChemistryHelper
 {
-    public partial class Form1 : Form
+    public partial class RigidContainerForm : Form
     {
-        public Form1()
+        public RigidContainerForm()
         {
             InitializeComponent();
+            this.MinimumSize = new Size(1000, 650);
+            this.MaximumSize = new Size(1000, 650);
+        }
+
+        private void RigidContainerForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
