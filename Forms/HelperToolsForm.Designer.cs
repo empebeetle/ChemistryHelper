@@ -45,7 +45,7 @@
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(385, 9);
+            this.labelTitle.Location = new System.Drawing.Point(385, 18);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(228, 32);
             this.labelTitle.TabIndex = 2;
@@ -70,6 +70,7 @@
             this.bHelperTools.TabIndex = 3;
             this.bHelperTools.Text = "Back";
             this.bHelperTools.UseVisualStyleBackColor = false;
+            this.bHelperTools.Click += new System.EventHandler(this.bHelperTools_Click);
             // 
             // button1
             // 

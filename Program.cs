@@ -16,7 +16,8 @@ namespace ChemistryHelper
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomePage());
+            HomePage homePage = new HomePage();
+            Application.Run(homePage);
         }
     }
 }
