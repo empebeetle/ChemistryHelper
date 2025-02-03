@@ -62,6 +62,7 @@
             this.bHelperTools.TabIndex = 3;
             this.bHelperTools.Text = "Helper Tools";
             this.bHelperTools.UseVisualStyleBackColor = false;
+            this.bHelperTools.Click += new System.EventHandler(this.bHelperTools_Click);
             // 
             // txtDaysUntilExam
             // 
