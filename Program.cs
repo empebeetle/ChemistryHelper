@@ -18,6 +18,7 @@ namespace ChemistryHelper
             Application.SetCompatibleTextRenderingDefault(false);
             HomePage homePage = new HomePage();
             Application.Run(homePage);
+            
         }
     }
 }

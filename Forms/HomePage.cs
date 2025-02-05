@@ -54,5 +54,10 @@ namespace ChemistryHelper
             new HelperToolsForm().Show();
             Hide();
         }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

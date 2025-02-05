@@ -23,5 +23,11 @@ namespace ChemistryHelper
         {
 
         }
+
+        private void bHelperTools_Click(object sender, EventArgs e)
+        {
+            new HelperToolsForm().Show();
+            Hide();
+        }
     }
 }

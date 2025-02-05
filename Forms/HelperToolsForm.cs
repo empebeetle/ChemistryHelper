@@ -39,5 +39,11 @@ namespace ChemistryHelper
             new HomePage().Show();
             Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new ParticleViewForm().Show();
+            Hide();
+        }
     }
 }
