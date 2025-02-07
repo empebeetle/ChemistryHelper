@@ -144,7 +144,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Photos\Red_toy_balloon.svg.png" />
     <None Include="Photos\Beaker.png" />
+    <Content Include="Photos\398px-Champagne_uncorking_photographed_with_a_high_speed_air-gap_flash.jpg" />
+    <Content Include="Photos\Balloon_with_smiley_face_01.jpg" />
     <Content Include="Photos\Gear.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
