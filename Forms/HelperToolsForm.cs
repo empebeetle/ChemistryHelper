@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,6 +18,15 @@ namespace ChemistryHelper
             InitializeComponent();
             this.MinimumSize = new Size(1000, 650);
             this.MaximumSize = new Size(1000, 650);
+
+            this.FormClosing += new FormClosingEventHandler(HelperToolsForm_FormClosing);
+            //subscribes to this event
+
+        }
+
+        private void HelperToolsForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
 
         private void HelperToolsForm_Load(object sender, EventArgs e)
@@ -37,13 +47,22 @@ namespace ChemistryHelper
         private void bHelperTools_Click(object sender, EventArgs e)
         {
             new HomePage().Show();
-            Hide();
+            Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             new ParticleViewForm().Show();
-            Hide();
+            Close();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            new RICETableForm().Show();
+            Close();
+
+        }
+
+
     }
 }

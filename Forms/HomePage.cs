@@ -17,11 +17,19 @@ namespace ChemistryHelper
             InitializeComponent();
             this.MinimumSize = new Size(1000, 650);
             this.MaximumSize = new Size(1000, 650);
+
+            this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -59,5 +67,7 @@ namespace ChemistryHelper
         {
 
         }
+
+
     }
 }
