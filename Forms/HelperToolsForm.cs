@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChemistryHelper.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -47,22 +48,26 @@ namespace ChemistryHelper
         private void bHelperTools_Click(object sender, EventArgs e)
         {
             new HomePage().Show();
-            Close();
+            Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             new ParticleViewForm().Show();
-            Close();
+            Hide();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             new RICETableForm().Show();
-            Close();
+            Hide();
 
         }
 
-
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new ChooseContainerForm().Show();
+            Hide();
+        }
     }
 }

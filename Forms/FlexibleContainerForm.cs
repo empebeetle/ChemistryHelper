@@ -26,7 +26,8 @@ namespace ChemistryHelper
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            Size size = new Size(50, 50);
+            pictureBox1.Size = size;
         }
     }
 }
