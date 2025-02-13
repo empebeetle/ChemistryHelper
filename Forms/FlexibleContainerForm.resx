@@ -121,7 +121,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAKMAAADaCAYAAADKQfKJAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7AAAAOwAFq1okJAAAAB3RJ
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA6+AAAOvgHqQrHAAAAAB3RJ
         TUUH6AcFBhcMu4WrYgAA8zdJREFUeF7s/QdYVOfaNn6jIiq9qKggYq+IIigCNuy999577zW2WKIxxjTT
         e29GYyyxV6TDDNN7Z+htBmZm4Xdea9bgaLL3++3s/bz/53nerOM4jzWgImZ+nNd934PG4+/r7+vv6+/r
         7+vv6+/r7+u/6ZXep6X3rxEBQdfaBfW43i5ozPU2TWdfiwheeikicN0v4QFbL4YHbPuZy8XWAVsuRwSu
@@ -1162,5 +1162,14 @@
         WpCM/adNm6YfM2bMHu6uptW0/vxavXq16b59+5788MMP+pMnT47m7v5TCxCmoWQcO3bsj9xdf/PF4/1/
         LNhRFaw0T2gAAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>The equation PV = nRT describes the properties of an ideal gas inside a container.
+
+Pressure (P) is measured in atmospheres (atm),
+Volume (V) is measured in liters (L),
+Number of gas molecules (n) is measured in moles (mol),
+R is the ideal gas constant, and
+Temperatue (T) is measured in Kelvin (K).</value>
   </data>
 </root>

@@ -32,15 +32,16 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelTitle = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tempTxt = new System.Windows.Forms.TextBox();
+            this.molesTxt = new System.Windows.Forms.TextBox();
+            this.volumeTxt = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bHelperTools = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
@@ -49,12 +50,13 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(397, 113);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(182, 216);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.Size = new System.Drawing.Size(163, 218);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -79,32 +81,38 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "P              V              =              n              R             T";
             // 
-            // textBox6
+            // tempTxt
             // 
-            this.textBox6.BackColor = System.Drawing.Color.LightCyan;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(749, 447);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 38);
-            this.textBox6.TabIndex = 29;
+            this.tempTxt.BackColor = System.Drawing.Color.LightCyan;
+            this.tempTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tempTxt.Location = new System.Drawing.Point(749, 447);
+            this.tempTxt.Name = "tempTxt";
+            this.tempTxt.Size = new System.Drawing.Size(100, 38);
+            this.tempTxt.TabIndex = 29;
+            this.tempTxt.Text = "298.15";
+            this.tempTxt.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
-            // textBox8
+            // molesTxt
             // 
-            this.textBox8.BackColor = System.Drawing.Color.LightCyan;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(516, 447);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 38);
-            this.textBox8.TabIndex = 27;
+            this.molesTxt.BackColor = System.Drawing.Color.LightCyan;
+            this.molesTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.molesTxt.Location = new System.Drawing.Point(516, 447);
+            this.molesTxt.Name = "molesTxt";
+            this.molesTxt.Size = new System.Drawing.Size(100, 38);
+            this.molesTxt.TabIndex = 27;
+            this.molesTxt.Text = "0.4657";
+            this.molesTxt.TextChanged += new System.EventHandler(this.molesTxt_TextChanged);
             // 
-            // textBox4
+            // volumeTxt
             // 
-            this.textBox4.BackColor = System.Drawing.Color.Bisque;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(248, 447);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 38);
-            this.textBox4.TabIndex = 25;
+            this.volumeTxt.BackColor = System.Drawing.Color.Bisque;
+            this.volumeTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.volumeTxt.Location = new System.Drawing.Point(248, 447);
+            this.volumeTxt.Name = "volumeTxt";
+            this.volumeTxt.ReadOnly = true;
+            this.volumeTxt.Size = new System.Drawing.Size(100, 38);
+            this.volumeTxt.TabIndex = 25;
+            this.volumeTxt.Text = "11.4";
             // 
             // textBox1
             // 
@@ -112,6 +120,7 @@
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(133, 447);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(100, 38);
             this.textBox1.TabIndex = 23;
             this.textBox1.Text = "1 atm";
@@ -125,6 +134,7 @@
             this.textBox2.MinimumSize = new System.Drawing.Size(100, 38);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(100, 38);
             this.textBox2.TabIndex = 30;
             this.textBox2.Text = "0.0821\r\n(L*atm)/(mol*K) ";
@@ -135,6 +145,7 @@
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(100, 45);
             this.trackBar1.TabIndex = 31;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // trackBar2
             // 
@@ -162,18 +173,28 @@
             this.bHelperTools.Text = "Back";
             this.bHelperTools.UseVisualStyleBackColor = false;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(847, 189);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(125, 96);
+            this.richTextBox1.TabIndex = 34;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            // 
             // FlexibleContainerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 611);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.trackBar2);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tempTxt);
+            this.Controls.Add(this.molesTxt);
+            this.Controls.Add(this.volumeTxt);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelTitle);
@@ -195,14 +216,15 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tempTxt;
+        private System.Windows.Forms.TextBox molesTxt;
+        private System.Windows.Forms.TextBox volumeTxt;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.TrackBar trackBar2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button bHelperTools;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
