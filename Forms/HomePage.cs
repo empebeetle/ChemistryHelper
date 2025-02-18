@@ -6,12 +6,17 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
+using System.Text.Json.Serialization; // code tutorial from https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/how-to 
 using System.Windows.Forms;
+
+
 
 namespace ChemistryHelper
 {
     public partial class HomePage : Form
     {
+        DateTime examDate;
         public HomePage()
         {
             InitializeComponent();
@@ -34,7 +39,7 @@ namespace ChemistryHelper
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            monthCalendar1.Visible = !monthCalendar1.Visible;
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -44,8 +49,11 @@ namespace ChemistryHelper
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-
+            examDate = monthCalendar1.SelectionStart;
+            updateExamDate();
+            
         }
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -68,6 +76,22 @@ namespace ChemistryHelper
 
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            new SettingsForm().Show();
+            Hide();
+        }
 
+        private void txtDayCounter_TextChanged(object sender, EventArgs e)
+        {
+            updateExamDate();
+        }
+
+        private void updateExamDate()
+        {
+            TimeSpan timeUntilExam = examDate - DateTime.Now;
+            txtDayCounter.Text = timeUntilExam.Days + "";
+            
+        }
     }
 }

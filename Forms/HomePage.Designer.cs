@@ -78,6 +78,7 @@
             this.txtDayCounter.Name = "txtDayCounter";
             this.txtDayCounter.Size = new System.Drawing.Size(31, 20);
             this.txtDayCounter.TabIndex = 1;
+            this.txtDayCounter.TextChanged += new System.EventHandler(this.txtDayCounter_TextChanged);
             // 
             // bSetExamDate
             // 
@@ -116,6 +117,7 @@
             this.monthCalendar1.Location = new System.Drawing.Point(13, 382);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 3;
+            this.monthCalendar1.Visible = false;
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // button1
@@ -127,6 +129,7 @@
             this.button1.Size = new System.Drawing.Size(50, 50);
             this.button1.TabIndex = 5;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // HomePage
             // 

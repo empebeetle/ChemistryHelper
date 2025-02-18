@@ -34,5 +34,17 @@ namespace ChemistryHelper.Forms
             new FlexibleContainerForm().Show();
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new RigidContainerForm().Show();
+            this.Hide();
+        }
+
+        private void bHelperTools_Click(object sender, EventArgs e)
+        {
+            new HelperToolsForm().Show();
+            this.Hide();
+        }
     }
 }
