@@ -142,17 +142,22 @@
             // trackBar1
             // 
             this.trackBar1.Location = new System.Drawing.Point(516, 491);
+            this.trackBar1.Minimum = 1;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(100, 45);
             this.trackBar1.TabIndex = 31;
+            this.trackBar1.Value = 1;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // trackBar2
             // 
             this.trackBar2.Location = new System.Drawing.Point(749, 491);
+            this.trackBar2.Minimum = 1;
             this.trackBar2.Name = "trackBar2";
             this.trackBar2.Size = new System.Drawing.Size(100, 45);
             this.trackBar2.TabIndex = 32;
+            this.trackBar2.Value = 1;
+            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             // 
             // panel1
             // 
@@ -175,9 +180,9 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(847, 189);
+            this.richTextBox1.Location = new System.Drawing.Point(847, 113);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(125, 96);
+            this.richTextBox1.Size = new System.Drawing.Size(125, 218);
             this.richTextBox1.TabIndex = 34;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);

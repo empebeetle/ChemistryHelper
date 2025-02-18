@@ -14,31 +14,39 @@ namespace ChemistryHelper
     public partial class FlexibleContainerForm : Form
     {
         double n;
+        double nInitial;
         double v;
         double t;
-        double volume;
-        double initialVolume = 11.4;
+        double vInitial = 11.4;
+        double tInitial = 298.15;
+        Size size = new Size(); //size of the balloon
+        Size sizeInitial = new Size();
+        Random bruh = new Random();
 
         public FlexibleContainerForm()
         {
             InitializeComponent();
-            this.MinimumSize = new Size(1000, 650);
+            this.MinimumSize = new Size(1000, 650); //window size
             this.MaximumSize = new Size(1000, 650);
             n = Double.Parse(molesTxt.Text);
+            nInitial = Double.Parse(molesTxt.Text);
             v = Double.Parse(volumeTxt.Text);
             t = Double.Parse(tempTxt.Text);
-            volume = (n * 0.0821 * t) / 1;
+            sizeInitial.Width = pictureBox1.Width;
+            sizeInitial.Height = pictureBox1.Height;
         }
 
         private void FlexibleContainerForm_Load(object sender, EventArgs e)
         {
             trackBar1.Value = 5;
+            trackBar2.Value = 5;
 
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            
+            pictureBox1.Location = new Point(bruh.Next(250, 750), bruh.Next(0, 400));
 
         }
 
@@ -60,7 +68,7 @@ namespace ChemistryHelper
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             
-            molesTxt.Text = n * trackBar1.Value / 5 + "";
+            molesTxt.Text = nInitial * (double) trackBar1.Value / 5 + "";
             resizeBalloon();
 
         }
@@ -69,17 +77,16 @@ namespace ChemistryHelper
         {
             // keeps the balloon centered.
 
-            Size size = new Size(pictureBox1.Width, pictureBox1.Height);
-            Size bize = pictureBox1.Size;
-            Random bruh = new Random();
+            size.Width = pictureBox1.Width;
+            size.Height = pictureBox1.Height;
             Point ogCenter = new Point((pictureBox1.Width) / 2 + pictureBox1.Location.X, pictureBox1.Location.Y - pictureBox1.Height / 2);
             Point corner;
             Point newCenter;
             for (int i = 0; i < 1; i++)
             {
                 corner = pictureBox1.Location;
-                size.Width = (int)(size.Width * getVolume()/initialVolume); //the multiplier should be proportional to the rate in change of surface area to volume.
-                size.Height = (int)(size.Height * getVolume() / initialVolume);
+                size.Width = (int)(sizeInitial.Width * getVolume()/vInitial); //the multiplier should be proportional to the rate in change of surface area to volume.
+                size.Height = (int)(sizeInitial.Height * getVolume() / vInitial);
                 pictureBox1.Size = size;
                 newCenter = new Point((pictureBox1.Width) / 2 + pictureBox1.Location.X, pictureBox1.Location.Y - pictureBox1.Height / 2);
                 pictureBox1.Location = new Point(pictureBox1.Location.X + ogCenter.X - newCenter.X, pictureBox1.Location.Y - ogCenter.Y + newCenter.Y);
@@ -89,10 +96,16 @@ namespace ChemistryHelper
         private double getVolume()
         {
             n = Double.Parse(molesTxt.Text);
-            v = Double.Parse(volumeTxt.Text);
             t = Double.Parse(tempTxt.Text);
-            return volume = (n * 0.0821 * t) / 1;
+            v = (n * 0.0821 * t) / 1;
+            volumeTxt.Text = v + "";
+            return v;
         }
 
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            tempTxt.Text = tInitial * (double)trackBar2.Value / 5 + "";
+            resizeBalloon();
+        }
     }
 }
