@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChemistryHelper.Forms;
+using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,14 +51,26 @@ namespace ChemistryHelper
 
         }
 
-        private void molesTxt_TextChanged(object sender, EventArgs e)
+        private void molesTxt_TextChanged(object sender, EventArgs e) //BROKEN
         {
-
+            if (molesTxt.Text == "0")
+            {
+                molesTxt.Text = "0.1";
+            }
+            if (Double.Parse(molesTxt.Text) > 0.9314)
+            {
+                molesTxt.Text = "0.9314";
+            }
+            resizeBalloon();
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-
+            if (Double.Parse(tempTxt.Text) > 596.3)
+            {
+                molesTxt.Text = "596.3";
+            }
+            resizeBalloon();
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -106,6 +119,12 @@ namespace ChemistryHelper
         {
             tempTxt.Text = tInitial * (double)trackBar2.Value / 5 + "";
             resizeBalloon();
+        }
+
+        private void bHelperTools_Click(object sender, EventArgs e)
+        {
+            new ChooseContainerForm().Show();
+            Hide();
         }
     }
 }
