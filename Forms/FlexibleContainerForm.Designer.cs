@@ -91,6 +91,8 @@
             this.tempTxt.TabIndex = 29;
             this.tempTxt.Text = "298.15";
             this.tempTxt.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.tempTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tempTxt_KeyDown);
+
             // 
             // molesTxt
             // 
@@ -102,6 +104,7 @@
             this.molesTxt.TabIndex = 27;
             this.molesTxt.Text = "0.4657";
             this.molesTxt.TextChanged += new System.EventHandler(this.molesTxt_TextChanged);
+            this.molesTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.molesTxt_KeyDown);
             // 
             // volumeTxt
             // 

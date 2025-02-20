@@ -53,24 +53,60 @@ namespace ChemistryHelper
 
         private void molesTxt_TextChanged(object sender, EventArgs e) //BROKEN
         {
-            if (molesTxt.Text == "0")
+
+        }
+
+        private void molesTxt_KeyDown(object sender, KeyEventArgs e) 
+        {                        
+            if(e.KeyData == Keys.Enter)   
             {
-                molesTxt.Text = "0.1";
-            }
-            if (Double.Parse(molesTxt.Text) > 0.9314)
-            {
-                molesTxt.Text = "0.9314";
-            }
-            resizeBalloon();
+                if (molesTxt.Text == "0" || molesTxt.Text == "")
+                {
+                    molesTxt.Text = "0.1";
+                }
+                if (Double.TryParse(molesTxt.Text, out double placeholder) == false)
+                {
+                    MessageBox.Show("not a number.");
+                    molesTxt.Text = n.ToString();
+                    
+                }
+                if (Double.Parse(molesTxt.Text) > 0.9314)
+                {
+                    molesTxt.Text = "0.9314";
+                }
+                resizeBalloon();
+            }             
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-            if (Double.Parse(tempTxt.Text) > 596.3)
+
+        }
+
+        private void tempTxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
             {
-                molesTxt.Text = "596.3";
+
+                if (Double.TryParse(tempTxt.Text, out double placeholder) == false)
+                {
+                    MessageBox.Show("not a number.");
+                    tempTxt.Text = t.ToString();
+                    t = placeholder;
+
+                }
+
+                if (tempTxt.Text == "0" || tempTxt.Text == "")
+                {
+                    tempTxt.Text = "59.63";
+                }
+
+                if (Double.Parse(tempTxt.Text) > 596.3)
+                {
+                    tempTxt.Text = "596.3";
+                }
+                resizeBalloon();
             }
-            resizeBalloon();
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
