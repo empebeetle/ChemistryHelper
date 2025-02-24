@@ -43,5 +43,22 @@ namespace ChemistryHelper
         {
 
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void particle1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+        
+                particle1.Location = new Point(particle1.Location.X + 1, particle1.Location.Y);
+            
+        }
     }
 }

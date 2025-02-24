@@ -48,6 +48,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.particle1 = new ChemistryHelper.TransparentPictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.particle1)).BeginInit();
@@ -156,6 +157,7 @@
             this.button1.TabIndex = 18;
             this.button1.Text = "Enter";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -219,6 +221,7 @@
             this.particle1.Size = new System.Drawing.Size(176, 183);
             this.particle1.TabIndex = 24;
             this.particle1.TabStop = false;
+            this.particle1.Click += new System.EventHandler(this.particle1_Click);
             // 
             // panel2
             // 
@@ -229,11 +232,24 @@
             this.panel2.Size = new System.Drawing.Size(245, 304);
             this.panel2.TabIndex = 25;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "HCl",
+            "NaOH"});
+            this.comboBox1.Location = new System.Drawing.Point(131, 274);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 26;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // ParticleViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 611);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -283,5 +299,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private TransparentPictureBox particle1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

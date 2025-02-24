@@ -70,6 +70,7 @@
             this.labelTitle.Size = new System.Drawing.Size(317, 32);
             this.labelTitle.TabIndex = 18;
             this.labelTitle.Text = "FLEXIBLE CONTAINER";
+            this.labelTitle.Click += new System.EventHandler(this.labelTitle_Click);
             // 
             // label1
             // 
@@ -92,7 +93,6 @@
             this.tempTxt.Text = "298.15";
             this.tempTxt.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             this.tempTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tempTxt_KeyDown);
-
             // 
             // molesTxt
             // 

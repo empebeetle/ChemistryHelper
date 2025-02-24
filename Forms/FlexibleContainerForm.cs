@@ -35,6 +35,8 @@ namespace ChemistryHelper
             t = Double.Parse(tempTxt.Text);
             sizeInitial.Width = pictureBox1.Width;
             sizeInitial.Height = pictureBox1.Height;
+            
+            
         }
 
         private void FlexibleContainerForm_Load(object sender, EventArgs e)
@@ -161,6 +163,11 @@ namespace ChemistryHelper
         {
             new ChooseContainerForm().Show();
             Hide();
+        }
+
+        private void labelTitle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
