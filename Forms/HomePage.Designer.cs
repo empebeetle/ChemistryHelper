@@ -68,14 +68,17 @@
             // 
             this.txtDaysUntilExam.Location = new System.Drawing.Point(53, 45);
             this.txtDaysUntilExam.Name = "txtDaysUntilExam";
+            this.txtDaysUntilExam.ReadOnly = true;
             this.txtDaysUntilExam.Size = new System.Drawing.Size(96, 20);
             this.txtDaysUntilExam.TabIndex = 2;
             this.txtDaysUntilExam.Text = "Days Until Exam";
+            this.txtDaysUntilExam.TextChanged += new System.EventHandler(this.txtDaysUntilExam_TextChanged);
             // 
             // txtDayCounter
             // 
             this.txtDayCounter.Location = new System.Drawing.Point(15, 46);
             this.txtDayCounter.Name = "txtDayCounter";
+            this.txtDayCounter.ReadOnly = true;
             this.txtDayCounter.Size = new System.Drawing.Size(31, 20);
             this.txtDayCounter.TabIndex = 1;
             this.txtDayCounter.TextChanged += new System.EventHandler(this.txtDayCounter_TextChanged);

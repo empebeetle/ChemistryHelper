@@ -127,6 +127,12 @@
     <Compile Include="Forms\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransparentPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TransparentPictureBox.Designer.cs">
+      <DependentUpon>TransparentPictureBox.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\ChooseContainerForm.resx">
       <DependentUpon>ChooseContainerForm.cs</DependentUpon>
     </EmbeddedResource>

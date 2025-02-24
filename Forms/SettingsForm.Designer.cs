@@ -55,6 +55,7 @@
             this.bHelperTools.TabIndex = 3;
             this.bHelperTools.Text = "Back";
             this.bHelperTools.UseVisualStyleBackColor = false;
+            this.bHelperTools.Click += new System.EventHandler(this.bHelperTools_Click);
             // 
             // checkedListBox1
             // 

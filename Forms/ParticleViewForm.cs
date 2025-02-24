@@ -17,6 +17,10 @@ namespace ChemistryHelper
             InitializeComponent();
             this.MinimumSize = new Size(1000, 650);
             this.MaximumSize = new Size(1000, 650);
+            pictureBox1.Controls.Add(particle1);
+            //particle1.Location = new Point(pictureBox1.Left + pictureBox1.Width/2, pictureBox1.Top + pictureBox1.Height / 2);
+            particle1.Location = new Point(35, 72);
+
         }
 
         private void ParticleViewForm_Load(object sender, EventArgs e)
@@ -28,6 +32,16 @@ namespace ChemistryHelper
         {
             new HelperToolsForm().Show();
             Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void transparentPictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

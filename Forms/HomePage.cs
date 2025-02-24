@@ -93,5 +93,10 @@ namespace ChemistryHelper
             txtDayCounter.Text = timeUntilExam.Days + "";
             
         }
+
+        private void txtDaysUntilExam_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
