@@ -46,13 +46,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.particle1 = new ChemistryHelper.TransparentPictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.particle2 = new ChemistryHelper.Forms.Particle();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.particle1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.particle2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -212,25 +212,27 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // particle1
-            // 
-            this.particle1.BackColor = System.Drawing.Color.Transparent;
-            this.particle1.Image = ((System.Drawing.Image)(resources.GetObject("particle1.Image")));
-            this.particle1.Location = new System.Drawing.Point(35, 72);
-            this.particle1.Name = "particle1";
-            this.particle1.Size = new System.Drawing.Size(176, 183);
-            this.particle1.TabIndex = 24;
-            this.particle1.TabStop = false;
-            this.particle1.Click += new System.EventHandler(this.particle1_Click);
-            // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.particle1);
+            this.panel2.Controls.Add(this.particle2);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(365, 76);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(245, 304);
             this.panel2.TabIndex = 25;
+            // 
+            // particle2
+            // 
+            this.particle2.Angle = 0;
+            this.particle2.BackColor = System.Drawing.Color.Transparent;
+            this.particle2.Image = ((System.Drawing.Image)(resources.GetObject("particle2.Image")));
+            this.particle2.Location = new System.Drawing.Point(56, 119);
+            this.particle2.Name = "particle2";
+            this.particle2.Size = new System.Drawing.Size(155, 166);
+            this.particle2.SpeedX = 0;
+            this.particle2.SpeedY = 0;
+            this.particle2.TabIndex = 24;
+            this.particle2.TabStop = false;
             // 
             // comboBox1
             // 
@@ -271,8 +273,8 @@
             this.Load += new System.EventHandler(this.ParticleViewForm_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.particle1)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.particle2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,8 +299,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private TransparentPictureBox particle1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox comboBox1;
+        private Forms.Particle particle2;
     }
 }

@@ -101,6 +101,12 @@
     <Compile Include="Forms\HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Particle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Particle.Designer.cs">
+      <DependentUpon>Particle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ParticleViewForm.cs">
       <SubType>Form</SubType>
     </Compile>

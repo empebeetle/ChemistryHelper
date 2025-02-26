@@ -17,9 +17,9 @@ namespace ChemistryHelper
             InitializeComponent();
             this.MinimumSize = new Size(1000, 650);
             this.MaximumSize = new Size(1000, 650);
-            pictureBox1.Controls.Add(particle1);
+            pictureBox1.Controls.Add(particle2);
             //particle1.Location = new Point(pictureBox1.Left + pictureBox1.Width/2, pictureBox1.Top + pictureBox1.Height / 2);
-            particle1.Location = new Point(35, 72);
+            particle2.Location = new Point(35, 72);
 
         }
 
@@ -56,9 +56,8 @@ namespace ChemistryHelper
 
         private void button1_Click(object sender, EventArgs e)
         {
-        
-                particle1.Location = new Point(particle1.Location.X + 1, particle1.Location.Y);
-            
+
+            particle2.Start();            
         }
     }
 }
