@@ -223,7 +223,6 @@
             // 
             // particle2
             // 
-            this.particle2.Angle = 0;
             this.particle2.BackColor = System.Drawing.Color.Transparent;
             this.particle2.Image = ((System.Drawing.Image)(resources.GetObject("particle2.Image")));
             this.particle2.Location = new System.Drawing.Point(56, 119);

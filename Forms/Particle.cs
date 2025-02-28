@@ -28,7 +28,7 @@ namespace ChemistryHelper.Forms
 
 
 
-        private int speedX = 1 //randy.Next(1, 5);
+        private int speedX = 1; //randy.Next(1, 5);
         public int SpeedX { get; set; }
 
         private int speedY = 1;
@@ -52,7 +52,7 @@ namespace ChemistryHelper.Forms
         public void Start()
         {
             timer.Interval = 32;
-            timer.Tick += new EventHandler(timer_Tick);
+            timer.Tick += new EventHandler(timer_Tick) + new EventHandler(particle_ExceedBoundary);
             timer.Start();
         }
         void timer_Tick(object sender, EventArgs e)
@@ -60,9 +60,23 @@ namespace ChemistryHelper.Forms
             Move();
         }
 
-        public void setBoundaries(int top, int bottom, int left, int right)
+        //public void setBoundaries(int top, int bottom, int left, int right)
+        //{
+
+        //}
+
+        void particle_ExceedBoundary(object sender, EventArgs e)
         {
-            new EventHandler(exceed_boundary);
+
+           if (this.Location.X < 0 || ( this.Location.X + this.Width ) > this.Parent.Width)
+            {
+                HorizontalCollide();
+            }
+            if (this.Location.Y < 0 || ( this.Location.Y + this.Height ) > this.Parent.Height)
+            {
+                VerticalCollide();
+            }
         }
     }
+    
 }
