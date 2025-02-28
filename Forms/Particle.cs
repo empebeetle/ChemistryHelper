@@ -12,6 +12,11 @@ namespace ChemistryHelper.Forms
 {
     public partial class Particle : PictureBox
     {
+        int left = 0;
+        int right = 0;
+        int top = 0;
+        int bottom = 0;
+
         private Random randy;
         public Particle()
         {
@@ -28,10 +33,10 @@ namespace ChemistryHelper.Forms
 
 
 
-        private int speedX = 1; //randy.Next(1, 5);
+        private int speedX = 3; //randy.Next(1, 5);
         public int SpeedX { get; set; }
 
-        private int speedY = 1;
+        private int speedY = 3;
         public int SpeedY { get; set; }
 
         public void Move()
@@ -51,7 +56,7 @@ namespace ChemistryHelper.Forms
         Timer timer = new Timer();
         public void Start()
         {
-            timer.Interval = 32;
+            timer.Interval = 16;
             timer.Tick += new EventHandler(timer_Tick) + new EventHandler(particle_ExceedBoundary);
             timer.Start();
         }
@@ -60,19 +65,22 @@ namespace ChemistryHelper.Forms
             Move();
         }
 
-        //public void setBoundaries(int top, int bottom, int left, int right)
-        //{
-
-        //}
+        public void setBoundaries(int top, int bottom, int left, int right)
+        {
+            this.top = top;
+            this.bottom = bottom;
+            this.left = left;
+            this.right = right;
+        }
 
         void particle_ExceedBoundary(object sender, EventArgs e)
         {
 
-           if (this.Location.X < 0 || ( this.Location.X + this.Width ) > this.Parent.Width)
+           if (this.Location.X < (0 + left) || ( this.Location.X + this.Width ) > (this.Parent.Width - right))
             {
                 HorizontalCollide();
             }
-            if (this.Location.Y < 0 || ( this.Location.Y + this.Height ) > this.Parent.Height)
+            if (this.Location.Y < (0 + top)  || ( this.Location.Y + this.Height ) > (this.Parent.Height - bottom))
             {
                 VerticalCollide();
             }

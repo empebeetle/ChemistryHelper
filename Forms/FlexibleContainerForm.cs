@@ -169,5 +169,10 @@ namespace ChemistryHelper
         {
 
         }
+
+        private void particle1_Click(object sender, EventArgs e)
+        {
+            particle1.Start();
+        }
     }
 }
