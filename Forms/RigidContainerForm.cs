@@ -29,10 +29,15 @@ namespace ChemistryHelper
                 if (p is Particle)
                 {
                     particles.Add((Particle)p);
-                    p.Enabled = false;
+                    p.Visible = false;
+
                 }
                 //particles.Add(p);
                 //p.Enabled = false;
+            }
+            foreach (Particle p in particles)
+            {
+                bottle.Controls.Add(p);
             }
         }
 
@@ -60,7 +65,7 @@ namespace ChemistryHelper
                 //p.SpeedY = 3;
                 //p.Start();
                 //Controls.Add(p);
-                particles[i].Enabled = true;
+                particles[i].Visible = true;
                 particles[i].Start();
             }
         }
