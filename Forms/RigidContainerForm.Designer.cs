@@ -196,7 +196,7 @@
             // 
             this.particle1.BackColor = System.Drawing.Color.Transparent;
             this.particle1.Image = ((System.Drawing.Image)(resources.GetObject("particle1.Image")));
-            this.particle1.Location = new System.Drawing.Point(439, 192);
+            this.particle1.Location = new System.Drawing.Point(490, 161);
             this.particle1.Name = "particle1";
             this.particle1.Size = new System.Drawing.Size(27, 27);
             this.particle1.SpeedX = 0;
@@ -244,7 +244,7 @@
             // 
             this.particle5.BackColor = System.Drawing.Color.Transparent;
             this.particle5.Image = ((System.Drawing.Image)(resources.GetObject("particle5.Image")));
-            this.particle5.Location = new System.Drawing.Point(439, 241);
+            this.particle5.Location = new System.Drawing.Point(456, 206);
             this.particle5.Name = "particle5";
             this.particle5.Size = new System.Drawing.Size(27, 27);
             this.particle5.SpeedX = 0;
@@ -280,7 +280,7 @@
             // 
             this.particle8.BackColor = System.Drawing.Color.Transparent;
             this.particle8.Image = ((System.Drawing.Image)(resources.GetObject("particle8.Image")));
-            this.particle8.Location = new System.Drawing.Point(490, 161);
+            this.particle8.Location = new System.Drawing.Point(446, 239);
             this.particle8.Name = "particle8";
             this.particle8.Size = new System.Drawing.Size(27, 27);
             this.particle8.SpeedX = 0;
@@ -292,7 +292,7 @@
             // 
             this.particle9.BackColor = System.Drawing.Color.Transparent;
             this.particle9.Image = ((System.Drawing.Image)(resources.GetObject("particle9.Image")));
-            this.particle9.Location = new System.Drawing.Point(457, 159);
+            this.particle9.Location = new System.Drawing.Point(456, 161);
             this.particle9.Name = "particle9";
             this.particle9.Size = new System.Drawing.Size(27, 27);
             this.particle9.SpeedX = 0;

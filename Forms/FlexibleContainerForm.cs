@@ -41,6 +41,7 @@ namespace ChemistryHelper
 
         private void FlexibleContainerForm_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             trackBar1.Value = 5;
             trackBar2.Value = 5;
 

@@ -20,32 +20,23 @@ namespace ChemistryHelper
             InitializeComponent();
             this.MinimumSize = new Size(1000, 650);
             this.MaximumSize = new Size(1000, 650);
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    particles[i] = particle1
-            //}
-            foreach (Control p in Controls)
-            {
-                if (p is Particle)
-                {
-                    particles.Add((Particle)p);
-                    p.Visible = false;
-
-                }
-                //particles.Add(p);
-                //p.Enabled = false;
-            }
-            foreach (Particle p in particles)
-            {
-                bottle.Controls.Add(p);
-            }
+            Console.WriteLine(particles.Count);
         }
-
 
         private void RigidContainerForm_Load(object sender, EventArgs e)
         {
-
+            this.CenterToScreen();
+            this.SetControls();
         }
+
+        private void SetControls()
+        {
+            this.Controls.Cast<Control>()
+                         .Where(control => control.Name.ToLower().Contains("particle"))
+                         .ToList()
+                         .ForEach(p => p.Visible = false);
+        }
+
 
         private void bHelperTools_Click(object sender, EventArgs e)
         {
@@ -55,18 +46,21 @@ namespace ChemistryHelper
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            for (int i = 0; i < trackBar1.Value; i++)
+            int visibleCount = trackBar1.Value;
+
+            // First get the list of particles
+            var particles = this.Controls.Cast<Control>()
+                                         .Where(control => control.Name.ToLower().Contains("particle"))
+                                         .ToList();
+
+            // Then set their visibility
+            foreach (var particle in particles)
             {
-                //Particle p = new Particle();
-                //p.Location = new Point(100, 100);
-                //p.Size = new Size(10, 10);
-                //p.BackColor = Color.Red;
-                //p.SpeedX = 3;
-                //p.SpeedY = 3;
-                //p.Start();
-                //Controls.Add(p);
-                particles[i].Visible = true;
-                particles[i].Start();
+                string numberString = new String(particle.Name.Where(Char.IsDigit).ToArray());
+                if (int.TryParse(numberString, out int particleNumber))
+                {
+                    particle.Visible = (particleNumber <= visibleCount);
+                }
             }
         }
     }

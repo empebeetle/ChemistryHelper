@@ -194,5 +194,8 @@
     <Content Include="Photos\Balloon_with_smiley_face_01.jpg" />
     <Content Include="Photos\Gear.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -32,7 +32,7 @@ namespace ChemistryHelper
 
         private void HelperToolsForm_Load(object sender, EventArgs e)
         {
-
+            this.CenterToScreen();
         }
 
         private void labelTitle_Click(object sender, EventArgs e)
