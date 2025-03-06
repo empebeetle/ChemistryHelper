@@ -14,10 +14,12 @@ namespace ChemistryHelper
 {
     public partial class RigidContainerForm : Form
     {
-        List<Particle> particles = new List<Particle>();
+        List<Particle> particles;
+
         public RigidContainerForm()
         {
             InitializeComponent();
+            particles = this.Controls.OfType<Particle>().ToList(); //This code uses LINQ to filter the Controls collection and only include objects of type Particle, then converts the result to a List<Particle>. This ensures type safety and proper initialization of your particles list.
             this.MinimumSize = new Size(1000, 650);
             this.MaximumSize = new Size(1000, 650);
             Console.WriteLine(particles.Count);
@@ -31,10 +33,13 @@ namespace ChemistryHelper
 
         private void SetControls()
         {
-            this.Controls.Cast<Control>()
-                         .Where(control => control.Name.ToLower().Contains("particle"))
-                         .ToList()
-                         .ForEach(p => p.Visible = false);
+
+            //particles = this.Controls.Cast<Control>().Where(control => control.Name.ToLower().Contains("particle")).ToList();
+            particles.ForEach(p => { p.Visible = false; 
+                //p.Start(); 
+            });
+            //lambda expression, passing each particle in the list to the function that sets it to invisible and starts it.
+            //particles.ForEach(p => bottle.Controls.Add(p));
         }
 
 
@@ -48,18 +53,21 @@ namespace ChemistryHelper
         {
             int visibleCount = trackBar1.Value;
 
+            /*
             // First get the list of particles
             var particles = this.Controls.Cast<Control>()
                                          .Where(control => control.Name.ToLower().Contains("particle"))
                                          .ToList();
 
+            */
+
             // Then set their visibility
-            foreach (var particle in particles)
+            foreach (Particle p in particles)
             {
-                string numberString = new String(particle.Name.Where(Char.IsDigit).ToArray());
+                string numberString = new String(p.Name.Where(Char.IsDigit).ToArray());
                 if (int.TryParse(numberString, out int particleNumber))
                 {
-                    particle.Visible = (particleNumber <= visibleCount);
+                    p.Visible = (particleNumber <= visibleCount);
                 }
             }
         }
