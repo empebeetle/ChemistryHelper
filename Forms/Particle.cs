@@ -33,15 +33,23 @@ namespace ChemistryHelper.Forms
 
 
 
-        private int speedX = 3; //randy.Next(1, 5);
-        public int SpeedX { get; set; }
+        private double speedX = 3; //randy.Next(1, 5);
+        public double SpeedX
+        {
+            get { return speedX; }
+            set { speedX = value; }
+        }
 
-        private int speedY = 3;
-        public int SpeedY { get; set; }
+        private double speedY = 3;
+        public double SpeedY
+        {
+            get { return speedY; }
+            set { speedY = value; }
+        }
 
         public void Move()
         {
-            this.Location = new Point(this.Location.X + speedX, this.Location.Y + speedY);
+            this.Location = new Point(this.Location.X + (int) speedX, this.Location.Y + (int) speedY);
         }
 
         public void VerticalCollide()
@@ -71,6 +79,11 @@ namespace ChemistryHelper.Forms
             this.bottom = bottom;
             this.left = left;
             this.right = right;
+        }
+
+        public void setTopBoundary(int top)
+        {
+            this.top = top;
         }
 
         void particle_ExceedBoundary(object sender, EventArgs e)

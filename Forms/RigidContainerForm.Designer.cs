@@ -42,31 +42,13 @@
             this.labelTitle = new System.Windows.Forms.Label();
             this.bottle = new System.Windows.Forms.PictureBox();
             this.trackBar3 = new System.Windows.Forms.TrackBar();
-            this.particle1 = new ChemistryHelper.Forms.Particle();
-            this.particle2 = new ChemistryHelper.Forms.Particle();
-            this.particle3 = new ChemistryHelper.Forms.Particle();
-            this.particle4 = new ChemistryHelper.Forms.Particle();
-            this.particle5 = new ChemistryHelper.Forms.Particle();
-            this.particle6 = new ChemistryHelper.Forms.Particle();
-            this.particle7 = new ChemistryHelper.Forms.Particle();
-            this.particle8 = new ChemistryHelper.Forms.Particle();
-            this.particle9 = new ChemistryHelper.Forms.Particle();
-            this.particle10 = new ChemistryHelper.Forms.Particle();
+            this.cork = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bottle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.particle1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.particle2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.particle3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.particle4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.particle5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.particle6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.particle7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.particle8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.particle9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.particle10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cork)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -178,7 +160,7 @@
             // 
             this.bottle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bottle.Image = ((System.Drawing.Image)(resources.GetObject("bottle.Image")));
-            this.bottle.Location = new System.Drawing.Point(429, 55);
+            this.bottle.Location = new System.Drawing.Point(429, 81);
             this.bottle.Name = "bottle";
             this.bottle.Size = new System.Drawing.Size(113, 333);
             this.bottle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -188,145 +170,29 @@
             // trackBar3
             // 
             this.trackBar3.Location = new System.Drawing.Point(248, 491);
+            this.trackBar3.Maximum = 100;
+            this.trackBar3.Minimum = 1;
             this.trackBar3.Name = "trackBar3";
             this.trackBar3.Size = new System.Drawing.Size(100, 45);
             this.trackBar3.TabIndex = 45;
+            this.trackBar3.Value = 1;
+            this.trackBar3.Scroll += new System.EventHandler(this.trackBar3_Scroll);
             // 
-            // particle1
+            // cork
             // 
-            this.particle1.BackColor = System.Drawing.Color.Transparent;
-            this.particle1.Image = ((System.Drawing.Image)(resources.GetObject("particle1.Image")));
-            this.particle1.Location = new System.Drawing.Point(490, 161);
-            this.particle1.Name = "particle1";
-            this.particle1.Size = new System.Drawing.Size(27, 27);
-            this.particle1.SpeedX = 0;
-            this.particle1.SpeedY = 0;
-            this.particle1.TabIndex = 46;
-            this.particle1.TabStop = false;
-            // 
-            // particle2
-            // 
-            this.particle2.BackColor = System.Drawing.Color.Transparent;
-            this.particle2.Image = ((System.Drawing.Image)(resources.GetObject("particle2.Image")));
-            this.particle2.Location = new System.Drawing.Point(479, 292);
-            this.particle2.Name = "particle2";
-            this.particle2.Size = new System.Drawing.Size(27, 27);
-            this.particle2.SpeedX = 0;
-            this.particle2.SpeedY = 0;
-            this.particle2.TabIndex = 47;
-            this.particle2.TabStop = false;
-            // 
-            // particle3
-            // 
-            this.particle3.BackColor = System.Drawing.Color.Transparent;
-            this.particle3.Image = ((System.Drawing.Image)(resources.GetObject("particle3.Image")));
-            this.particle3.Location = new System.Drawing.Point(439, 324);
-            this.particle3.Name = "particle3";
-            this.particle3.Size = new System.Drawing.Size(27, 27);
-            this.particle3.SpeedX = 0;
-            this.particle3.SpeedY = 0;
-            this.particle3.TabIndex = 48;
-            this.particle3.TabStop = false;
-            // 
-            // particle4
-            // 
-            this.particle4.BackColor = System.Drawing.Color.Transparent;
-            this.particle4.Image = ((System.Drawing.Image)(resources.GetObject("particle4.Image")));
-            this.particle4.Location = new System.Drawing.Point(503, 220);
-            this.particle4.Name = "particle4";
-            this.particle4.Size = new System.Drawing.Size(27, 27);
-            this.particle4.SpeedX = 0;
-            this.particle4.SpeedY = 0;
-            this.particle4.TabIndex = 49;
-            this.particle4.TabStop = false;
-            // 
-            // particle5
-            // 
-            this.particle5.BackColor = System.Drawing.Color.Transparent;
-            this.particle5.Image = ((System.Drawing.Image)(resources.GetObject("particle5.Image")));
-            this.particle5.Location = new System.Drawing.Point(456, 206);
-            this.particle5.Name = "particle5";
-            this.particle5.Size = new System.Drawing.Size(27, 27);
-            this.particle5.SpeedX = 0;
-            this.particle5.SpeedY = 0;
-            this.particle5.TabIndex = 50;
-            this.particle5.TabStop = false;
-            // 
-            // particle6
-            // 
-            this.particle6.BackColor = System.Drawing.Color.Transparent;
-            this.particle6.Image = ((System.Drawing.Image)(resources.GetObject("particle6.Image")));
-            this.particle6.Location = new System.Drawing.Point(503, 339);
-            this.particle6.Name = "particle6";
-            this.particle6.Size = new System.Drawing.Size(27, 27);
-            this.particle6.SpeedX = 0;
-            this.particle6.SpeedY = 0;
-            this.particle6.TabIndex = 51;
-            this.particle6.TabStop = false;
-            // 
-            // particle7
-            // 
-            this.particle7.BackColor = System.Drawing.Color.Transparent;
-            this.particle7.Image = ((System.Drawing.Image)(resources.GetObject("particle7.Image")));
-            this.particle7.Location = new System.Drawing.Point(479, 253);
-            this.particle7.Name = "particle7";
-            this.particle7.Size = new System.Drawing.Size(27, 27);
-            this.particle7.SpeedX = 0;
-            this.particle7.SpeedY = 0;
-            this.particle7.TabIndex = 52;
-            this.particle7.TabStop = false;
-            // 
-            // particle8
-            // 
-            this.particle8.BackColor = System.Drawing.Color.Transparent;
-            this.particle8.Image = ((System.Drawing.Image)(resources.GetObject("particle8.Image")));
-            this.particle8.Location = new System.Drawing.Point(446, 239);
-            this.particle8.Name = "particle8";
-            this.particle8.Size = new System.Drawing.Size(27, 27);
-            this.particle8.SpeedX = 0;
-            this.particle8.SpeedY = 0;
-            this.particle8.TabIndex = 53;
-            this.particle8.TabStop = false;
-            // 
-            // particle9
-            // 
-            this.particle9.BackColor = System.Drawing.Color.Transparent;
-            this.particle9.Image = ((System.Drawing.Image)(resources.GetObject("particle9.Image")));
-            this.particle9.Location = new System.Drawing.Point(456, 161);
-            this.particle9.Name = "particle9";
-            this.particle9.Size = new System.Drawing.Size(27, 27);
-            this.particle9.SpeedX = 0;
-            this.particle9.SpeedY = 0;
-            this.particle9.TabIndex = 54;
-            this.particle9.TabStop = false;
-            // 
-            // particle10
-            // 
-            this.particle10.BackColor = System.Drawing.Color.Transparent;
-            this.particle10.Image = ((System.Drawing.Image)(resources.GetObject("particle10.Image")));
-            this.particle10.Location = new System.Drawing.Point(439, 274);
-            this.particle10.Name = "particle10";
-            this.particle10.Size = new System.Drawing.Size(27, 27);
-            this.particle10.SpeedX = 0;
-            this.particle10.SpeedY = 0;
-            this.particle10.TabIndex = 55;
-            this.particle10.TabStop = false;
+            this.cork.Image = ((System.Drawing.Image)(resources.GetObject("cork.Image")));
+            this.cork.Location = new System.Drawing.Point(432, 52);
+            this.cork.Name = "cork";
+            this.cork.Size = new System.Drawing.Size(107, 33);
+            this.cork.TabIndex = 46;
+            this.cork.TabStop = false;
             // 
             // RigidContainerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 611);
-            this.Controls.Add(this.particle10);
-            this.Controls.Add(this.particle9);
-            this.Controls.Add(this.particle8);
-            this.Controls.Add(this.particle7);
-            this.Controls.Add(this.particle6);
-            this.Controls.Add(this.particle5);
-            this.Controls.Add(this.particle4);
-            this.Controls.Add(this.particle3);
-            this.Controls.Add(this.particle2);
-            this.Controls.Add(this.particle1);
+            this.Controls.Add(this.cork);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.trackBar2);
             this.Controls.Add(this.trackBar1);
@@ -347,16 +213,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bottle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.particle1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.particle2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.particle3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.particle4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.particle5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.particle6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.particle7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.particle8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.particle9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.particle10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cork)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -377,15 +234,6 @@
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.PictureBox bottle;
         private System.Windows.Forms.TrackBar trackBar3;
-        private Forms.Particle particle1;
-        private Forms.Particle particle2;
-        private Forms.Particle particle3;
-        private Forms.Particle particle4;
-        private Forms.Particle particle5;
-        private Forms.Particle particle6;
-        private Forms.Particle particle7;
-        private Forms.Particle particle8;
-        private Forms.Particle particle9;
-        private Forms.Particle particle10;
+        private System.Windows.Forms.PictureBox cork;
     }
 }
