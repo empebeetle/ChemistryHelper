@@ -42,7 +42,6 @@ namespace ChemistryHelper
 
         private void CreateParticles()
         {
-            // Example of creating particles
             for (int i = 0; i < 10; i++)
             {
                 Particle particle = new Particle
@@ -50,9 +49,12 @@ namespace ChemistryHelper
                     Name = "particle" + i,
                     Size = new Size(27, 27),
                     Location = new Point(random.Next(10, 30), random.Next(10, 30)),
-                    //Image = Image.FromFile("C:/__Students/Li/ChemistryHelper/Photos/small sulfur.png")
+                    SpeedX = random.Next(1, 5) * random.NextDouble() + 3,
+                    SpeedY = random.Next(1, 5) * random.NextDouble() + 3,
+                    
                     Image = ((System.Drawing.Image)(resources.GetObject("particle2.Image")))
                 };
+                particle.InitialParticleSpeeds();
                 particles.Add(particle);
             }
         }
@@ -84,7 +86,7 @@ namespace ChemistryHelper
             n = Double.Parse(molesTxt.Text);
             t = Double.Parse(tempTxt.Text);
             v = Double.Parse(volumeTxt.Text);
-            p = (n * 0.0821 * t) / 1;
+            p = (n * 0.0821 * t) / v;
             pressureTxt.Text = p + "";
             return p;
         }
@@ -134,6 +136,7 @@ namespace ChemistryHelper
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             int visibleCount = trackBar1.Value;
+            molesTxt.Text = trackBar1.Value + "";
 
             /*
             // First get the list of particles
@@ -163,21 +166,18 @@ namespace ChemistryHelper
             {
                 particles[i].Visible = false;
             }
-        }
-
-        private void particle4_Click(object sender, EventArgs e)
-        {
-
+            getPressure();
         }
 
         private void trackBar3_Scroll(object sender, EventArgs e)
         {
-            cork.Location = new Point(cork.Location.X, (int) (corkStartingLocation + (((double) trackBar3.Value)/100 * bottle.Height)));
+            volumeTxt.Text = (double) trackBar3.Value/100 + "";
+            cork.Location = new Point(cork.Location.X, (int) (corkStartingLocation + ((100 - (double) trackBar3.Value)/100 * bottle.Height)));
             foreach (Particle p in particles)
             {
                 p.setTopBoundary(cork.Location.Y);
             }
-
+            getPressure();
         }
 
         private void trackBar2_Scroll(object sender, EventArgs e)
@@ -187,8 +187,9 @@ namespace ChemistryHelper
             {
                 p.SpeedX = p.InitialXSpeed * trackBar2.Value / 5;
                 p.SpeedY = p.InitialYSpeed * trackBar2.Value / 5;
-                getPressure();
+                
             }
+            getPressure();
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)

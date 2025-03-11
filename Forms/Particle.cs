@@ -25,7 +25,7 @@ namespace ChemistryHelper.Forms
             InitializeComponent();
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             this.BackColor = Color.Transparent;
-            InitialParticleSpeeds();
+            //InitialParticleSpeeds();
         }
 
         protected override void OnPaint(PaintEventArgs pe)
@@ -35,14 +35,14 @@ namespace ChemistryHelper.Forms
 
 
 
-        private double speedX = 3; //randy.Next(1, 5);
+        private double speedX; //randy.Next(1, 5);
         public double SpeedX
         {
             get { return speedX; }
             set { speedX = value; }
         }
 
-        private double speedY = 3;
+        private double speedY;
         public double SpeedY
         {
             get { return speedY; }
@@ -63,8 +63,7 @@ namespace ChemistryHelper.Forms
 
         public void InitialParticleSpeeds()
         {
-            SpeedX = random.Next(1, 5) * random.NextDouble() + 3;
-            SpeedY = random.Next(1, 5) * random.NextDouble() + 3;
+
             InitialXSpeed = SpeedX;
             InitialYSpeed = SpeedY;
         }

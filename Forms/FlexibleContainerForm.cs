@@ -134,15 +134,14 @@ namespace ChemistryHelper
             Point ogCenter = new Point((pictureBox1.Width) / 2 + pictureBox1.Location.X, pictureBox1.Location.Y - pictureBox1.Height / 2);
             Point corner;
             Point newCenter;
-            for (int i = 0; i < 1; i++)
-            {
-                corner = pictureBox1.Location;
-                size.Width = (int)(sizeInitial.Width * getVolume()/vInitial); //the multiplier should be proportional to the rate in change of surface area to volume.
-                size.Height = (int)(sizeInitial.Height * getVolume() / vInitial);
-                pictureBox1.Size = size;
-                newCenter = new Point((pictureBox1.Width) / 2 + pictureBox1.Location.X, pictureBox1.Location.Y - pictureBox1.Height / 2);
-                pictureBox1.Location = new Point(pictureBox1.Location.X + ogCenter.X - newCenter.X, pictureBox1.Location.Y - ogCenter.Y + newCenter.Y);
-            }
+
+            corner = pictureBox1.Location;
+            size.Width = (int)(sizeInitial.Width * getVolume()/vInitial); //the multiplier should be proportional to the rate in change of surface area to volume.
+            size.Height = (int)(sizeInitial.Height * getVolume() / vInitial);
+            pictureBox1.Size = size;
+            newCenter = new Point((pictureBox1.Width) / 2 + pictureBox1.Location.X, pictureBox1.Location.Y - pictureBox1.Height / 2);
+            pictureBox1.Location = new Point(pictureBox1.Location.X + ogCenter.X - newCenter.X, pictureBox1.Location.Y - ogCenter.Y + newCenter.Y);
+            
         }
         
         private double getVolume()
@@ -173,7 +172,6 @@ namespace ChemistryHelper
 
         private void particle1_Click(object sender, EventArgs e)
         {
-            particle1.Start();
         }
 
         private void volumeTxt_TextChanged(object sender, EventArgs e)

@@ -137,6 +137,7 @@
             this.pressureTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pressureTxt.Location = new System.Drawing.Point(133, 447);
             this.pressureTxt.Name = "pressureTxt";
+            this.pressureTxt.ReadOnly = true;
             this.pressureTxt.Size = new System.Drawing.Size(100, 38);
             this.pressureTxt.TabIndex = 37;
             this.pressureTxt.Text = "0";

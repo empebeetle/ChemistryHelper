@@ -42,12 +42,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.bHelperTools = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.particle1 = new ChemistryHelper.Forms.Particle();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.particle1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -194,25 +192,11 @@
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
-            // particle1
-            // 
-            this.particle1.BackColor = System.Drawing.Color.Transparent;
-            this.particle1.Image = ((System.Drawing.Image)(resources.GetObject("particle1.Image")));
-            this.particle1.Location = new System.Drawing.Point(200, 149);
-            this.particle1.Name = "particle1";
-            this.particle1.Size = new System.Drawing.Size(168, 232);
-            this.particle1.SpeedX = 0D;
-            this.particle1.SpeedY = 0D;
-            this.particle1.TabIndex = 35;
-            this.particle1.TabStop = false;
-            this.particle1.Click += new System.EventHandler(this.particle1_Click);
-            // 
             // FlexibleContainerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 611);
-            this.Controls.Add(this.particle1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.trackBar2);
@@ -232,7 +216,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.particle1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,6 +236,5 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button bHelperTools;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private Forms.Particle particle1;
     }
 }
