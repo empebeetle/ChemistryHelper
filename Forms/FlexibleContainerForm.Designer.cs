@@ -118,6 +118,7 @@
             this.volumeTxt.Size = new System.Drawing.Size(100, 38);
             this.volumeTxt.TabIndex = 25;
             this.volumeTxt.Text = "11.4";
+            this.volumeTxt.TextChanged += new System.EventHandler(this.volumeTxt_TextChanged);
             // 
             // textBox1
             // 
@@ -200,8 +201,8 @@
             this.particle1.Location = new System.Drawing.Point(200, 149);
             this.particle1.Name = "particle1";
             this.particle1.Size = new System.Drawing.Size(168, 232);
-            this.particle1.SpeedX = 0;
-            this.particle1.SpeedY = 0;
+            this.particle1.SpeedX = 0D;
+            this.particle1.SpeedY = 0D;
             this.particle1.TabIndex = 35;
             this.particle1.TabStop = false;
             this.particle1.Click += new System.EventHandler(this.particle1_Click);

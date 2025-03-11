@@ -34,10 +34,10 @@
             this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tempTxt = new System.Windows.Forms.TextBox();
+            this.molesTxt = new System.Windows.Forms.TextBox();
+            this.volumeTxt = new System.Windows.Forms.TextBox();
+            this.pressureTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
             this.bottle = new System.Windows.Forms.PictureBox();
@@ -77,6 +77,7 @@
             this.trackBar2.Name = "trackBar2";
             this.trackBar2.Size = new System.Drawing.Size(100, 45);
             this.trackBar2.TabIndex = 43;
+            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             // 
             // trackBar1
             // 
@@ -99,42 +100,46 @@
             this.textBox2.TabIndex = 41;
             this.textBox2.Text = "0.0821\r\n(L*atm)/(mol*K) ";
             // 
-            // textBox6
+            // tempTxt
             // 
-            this.textBox6.BackColor = System.Drawing.Color.LightCyan;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(749, 447);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 38);
-            this.textBox6.TabIndex = 40;
+            this.tempTxt.BackColor = System.Drawing.Color.LightCyan;
+            this.tempTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tempTxt.Location = new System.Drawing.Point(749, 447);
+            this.tempTxt.Name = "tempTxt";
+            this.tempTxt.Size = new System.Drawing.Size(100, 38);
+            this.tempTxt.TabIndex = 40;
+            this.tempTxt.Text = "298.15";
+            this.tempTxt.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
-            // textBox8
+            // molesTxt
             // 
-            this.textBox8.BackColor = System.Drawing.Color.LightCyan;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(516, 447);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 38);
-            this.textBox8.TabIndex = 39;
+            this.molesTxt.BackColor = System.Drawing.Color.LightCyan;
+            this.molesTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.molesTxt.Location = new System.Drawing.Point(516, 447);
+            this.molesTxt.Name = "molesTxt";
+            this.molesTxt.Size = new System.Drawing.Size(100, 38);
+            this.molesTxt.TabIndex = 39;
+            this.molesTxt.Text = "0";
             // 
-            // textBox4
+            // volumeTxt
             // 
-            this.textBox4.BackColor = System.Drawing.Color.LightCyan;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(248, 447);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 38);
-            this.textBox4.TabIndex = 38;
+            this.volumeTxt.BackColor = System.Drawing.Color.LightCyan;
+            this.volumeTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.volumeTxt.Location = new System.Drawing.Point(248, 447);
+            this.volumeTxt.Name = "volumeTxt";
+            this.volumeTxt.Size = new System.Drawing.Size(100, 38);
+            this.volumeTxt.TabIndex = 38;
+            this.volumeTxt.Text = "1";
             // 
-            // textBox1
+            // pressureTxt
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Bisque;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(133, 447);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 38);
-            this.textBox1.TabIndex = 37;
-            this.textBox1.Text = "1 atm";
+            this.pressureTxt.BackColor = System.Drawing.Color.Bisque;
+            this.pressureTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pressureTxt.Location = new System.Drawing.Point(133, 447);
+            this.pressureTxt.Name = "pressureTxt";
+            this.pressureTxt.Size = new System.Drawing.Size(100, 38);
+            this.pressureTxt.TabIndex = 37;
+            this.pressureTxt.Text = "0";
             // 
             // label1
             // 
@@ -197,10 +202,10 @@
             this.Controls.Add(this.trackBar2);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tempTxt);
+            this.Controls.Add(this.molesTxt);
+            this.Controls.Add(this.volumeTxt);
+            this.Controls.Add(this.pressureTxt);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.bottle);
@@ -226,10 +231,10 @@
         private System.Windows.Forms.TrackBar trackBar2;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tempTxt;
+        private System.Windows.Forms.TextBox molesTxt;
+        private System.Windows.Forms.TextBox volumeTxt;
+        private System.Windows.Forms.TextBox pressureTxt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.PictureBox bottle;

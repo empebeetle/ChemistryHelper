@@ -16,14 +16,16 @@ namespace ChemistryHelper.Forms
         int right = 0;
         int top = 0;
         int bottom = 0;
+        double initialXSpeed;
+        double initialYSpeed;
+        Random random = new Random();
 
-        private Random randy;
         public Particle()
         {
             InitializeComponent();
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             this.BackColor = Color.Transparent;
-            randy = new Random();
+            InitialParticleSpeeds();
         }
 
         protected override void OnPaint(PaintEventArgs pe)
@@ -45,6 +47,26 @@ namespace ChemistryHelper.Forms
         {
             get { return speedY; }
             set { speedY = value; }
+        }
+
+        public double InitialXSpeed
+        {
+            get { return initialXSpeed; }
+            set { initialXSpeed = value; }
+        }
+
+        public double InitialYSpeed
+        {
+            get { return initialYSpeed; }
+            set { initialYSpeed = value; }
+        }
+
+        public void InitialParticleSpeeds()
+        {
+            SpeedX = random.Next(1, 5) * random.NextDouble() + 3;
+            SpeedY = random.Next(1, 5) * random.NextDouble() + 3;
+            InitialXSpeed = SpeedX;
+            InitialYSpeed = SpeedY;
         }
 
         public void Move()
@@ -89,11 +111,11 @@ namespace ChemistryHelper.Forms
         void particle_ExceedBoundary(object sender, EventArgs e)
         {
 
-           if (this.Location.X < (0 + left) || ( this.Location.X + this.Width ) > (this.Parent.Width - right))
+           if (this.Location.X < (left) || ( this.Location.X + this.Width ) > (this.Parent.Width - right))
             {
                 HorizontalCollide();
             }
-            if (this.Location.Y < (0 + top)  || ( this.Location.Y + this.Height ) > (this.Parent.Height - bottom))
+            if (this.Location.Y < (top)  || ( this.Location.Y + this.Height ) > (this.Parent.Height - bottom))
             {
                 VerticalCollide();
             }

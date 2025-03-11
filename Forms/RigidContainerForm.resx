@@ -121,7 +121,7 @@
   <data name="bottle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAHIAAAFKCAYAAADBgwsJAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAACCRJREFUeF7t0cEJA1EUQtHpv4OUlhamiUkWgkIswB/ug7PwgSuv7z34C/WJ89Qn
+        wQAADsEBuJFr7QAACCRJREFUeF7t0cEJA1EUQtHpv4OUlhamiUkWgkIswB/ug7PwgSuv7z34C/WJ89Qn
         zuPwet84RO4mDq2ATbmbOLQCNuVu4tAK2JS7iUMrYFPuJg6tgE25mzi0AjblbuLQCtiUu4lDK2BT7iYO
         rYBNuZs4tAI25W7i0ArYlLuJQytgU+4mDq2ATbmbOLQCNuVu4tAK2JS7iUMrYFPuJg6tgE25mzi0Ajbl
         buLQCtiUu4lDK2BT7iYOrYBNuZs4tAI25W7i0ArYlLuJQytgU+4mDq2ATbmbOLQCNuVu4tAK2JS7iUMr
@@ -162,7 +162,7 @@
   <data name="cork.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGsAAAAfCAYAAADgDDPbAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAOVJREFUaEPt28ENgkAYRGG7tAKbsAcLshHbwYwJSoZBNBGcw/uTjwsLm+y7wmGY
+        wQAADsEBuJFr7QAAAOVJREFUaEPt28ENgkAYRGG7tAKbsAcLshHbwYwJSoZBNBGcw/uTjwsLm+y7wmGY
         zPV8RBGfZ6y0GP83nUNagD5fx7pdTvihdMZLVmOlDbCd1GAqxkovwn5SE5nFSg9jf95FiFXKuwixSnkX
         IVYp7yLEKuVdhFilvIsQq5R3EWKV8i5CrFLeRYhVyrsIsUp5FyFWKe8ixCrlXYRYpbyLEKuUdxFilfIu
         QqxS3kWIVcq7CLFKeRchVinvIrNYkh7GflITibFG6UXYTmow9TbWkrQRPpfOdM3jI09d0k30GIcfE8q9

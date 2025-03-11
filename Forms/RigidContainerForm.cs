@@ -1,4 +1,5 @@
 ﻿using ChemistryHelper.Forms;
+using ChemistryHelper.Properties;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,7 +16,17 @@ namespace ChemistryHelper
     public partial class RigidContainerForm : Form
     {
         List<Particle> particles;
+        double n;
+        double nInitial = 0;
+        double v;
+        double t;
+        double vInitial = 1;
+        double tInitial = 298.15;
+        double p;
+        double pInitial = 0;
         Random random = new Random();
+        double corkStartingLocation;
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ParticleViewForm));
 
         public RigidContainerForm()
         {
@@ -26,6 +37,7 @@ namespace ChemistryHelper
             this.MaximumSize = new Size(1000, 650);
             CreateParticles();
             Console.WriteLine(particles.Count);
+            corkStartingLocation = cork.Location.Y;
         }
 
         private void CreateParticles()
@@ -37,12 +49,10 @@ namespace ChemistryHelper
                 {
                     Name = "particle" + i,
                     Size = new Size(27, 27),
-                    Location = new Point(random.Next(10, 30) , random.Next(10,30)),
-                    SpeedX = random.Next(1, 5) * random.NextDouble() + 3,
-                    SpeedY = i,
-                    Image = Image.FromFile("C:/__Students/Li/ChemistryHelper/Photos/small sulfur.png")
-                }
-                ;
+                    Location = new Point(random.Next(10, 30), random.Next(10, 30)),
+                    //Image = Image.FromFile("C:/__Students/Li/ChemistryHelper/Photos/small sulfur.png")
+                    Image = ((System.Drawing.Image)(resources.GetObject("particle2.Image")))
+                };
                 particles.Add(particle);
             }
         }
@@ -54,7 +64,50 @@ namespace ChemistryHelper
 
             
             this.SetControls();
+            trackBar3.Value = 100;
+            trackBar1.Value = 0;
+            trackBar2.Value = 5;
 
+        }
+
+        private double getVolume()
+        {
+            n = Double.Parse(molesTxt.Text);
+            t = Double.Parse(tempTxt.Text);
+            v = (n * 0.0821 * t) / 1;
+            volumeTxt.Text = v + "";
+            return v;
+        }
+
+        private double getPressure()
+        {
+            n = Double.Parse(molesTxt.Text);
+            t = Double.Parse(tempTxt.Text);
+            v = Double.Parse(volumeTxt.Text);
+            p = (n * 0.0821 * t) / 1;
+            pressureTxt.Text = p + "";
+            return p;
+        }
+
+        private void molesTxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                if (molesTxt.Text == "0" || molesTxt.Text == "")
+                {
+                    molesTxt.Text = "0.1";
+                }
+                if (Double.TryParse(molesTxt.Text, out double placeholder) == false)
+                {
+                    MessageBox.Show("not a number.");
+                    molesTxt.Text = n.ToString();
+
+                }
+                if (Double.Parse(molesTxt.Text) > 0.9314)
+                {
+                    molesTxt.Text = "0.9314";
+                }
+            }
         }
 
         private void SetControls()
@@ -119,11 +172,28 @@ namespace ChemistryHelper
 
         private void trackBar3_Scroll(object sender, EventArgs e)
         {
-            cork.Location = new Point(cork.Location.X, cork.Location.Y - trackBar3.Value * bottle.Height);
+            cork.Location = new Point(cork.Location.X, (int) (corkStartingLocation + (((double) trackBar3.Value)/100 * bottle.Height)));
             foreach (Particle p in particles)
             {
                 p.setTopBoundary(cork.Location.Y);
             }
+
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            tempTxt.Text = tInitial * (double)trackBar2.Value / 5 + "";
+            foreach (Particle p in particles)
+            {
+                p.SpeedX = p.InitialXSpeed * trackBar2.Value / 5;
+                p.SpeedY = p.InitialYSpeed * trackBar2.Value / 5;
+                getPressure();
+            }
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
