@@ -114,16 +114,7 @@ namespace ChemistryHelper
 
         private void SetControls()
         {
-            for (int i = 0; i < particles.Count; i++)
-            {
-                bottle.Controls.Add(particles[i]);
-            }
-            //particles = this.Controls.Cast<Control>().Where(control => control.Name.ToLower().Contains("particle")).ToList();
-            particles.ForEach(p => { p.Visible = false; 
-                p.Start(); 
-            });
-            //lambda expression, passing each particle in the list to the function that sets it to invisible and starts it.
-            //particles.ForEach(p => bottle.Controls.Add(p));
+            particles.ForEach(p => { bottle.Controls.Add(p); p.Visible = false; p.Start(); });
         }
 
 
@@ -137,26 +128,6 @@ namespace ChemistryHelper
         {
             int visibleCount = trackBar1.Value;
             molesTxt.Text = trackBar1.Value + "";
-
-            /*
-            // First get the list of particles
-            var particles = this.Controls.Cast<Control>()
-                                         .Where(control => control.Name.ToLower().Contains("particle"))
-                                         .ToList();
-
-            */
-
-            // Then set their visibility
-            /*
-            foreach (Particle p in particles)
-            {
-                string numberString = new String(p.Name.Where(Char.IsDigit).ToArray());
-                if (int.TryParse(numberString, out int particleNumber))
-                {
-                    p.Visible = (particleNumber <= visibleCount);
-                }
-            }
-            */
 
             for (int i = 0; i < visibleCount; i++)
             {

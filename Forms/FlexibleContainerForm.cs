@@ -77,6 +77,7 @@ namespace ChemistryHelper
                 {
                     molesTxt.Text = "0.9314";
                 }
+                //never handles negatives
                 resizeBalloon();
             }             
         }
@@ -129,9 +130,8 @@ namespace ChemistryHelper
         {
             // keeps the balloon centered.
 
-            size.Width = pictureBox1.Width;
-            size.Height = pictureBox1.Height;
-            Point ogCenter = new Point((pictureBox1.Width) / 2 + pictureBox1.Location.X, pictureBox1.Location.Y - pictureBox1.Height / 2);
+
+            Point ogCenter = new Point((pictureBox1.Width) / 2 + pictureBox1.Location.X, pictureBox1.Location.Y + pictureBox1.Height / 2);
             Point corner;
             Point newCenter;
 
@@ -139,8 +139,8 @@ namespace ChemistryHelper
             size.Width = (int)(sizeInitial.Width * getVolume()/vInitial); //the multiplier should be proportional to the rate in change of surface area to volume.
             size.Height = (int)(sizeInitial.Height * getVolume() / vInitial);
             pictureBox1.Size = size;
-            newCenter = new Point((pictureBox1.Width) / 2 + pictureBox1.Location.X, pictureBox1.Location.Y - pictureBox1.Height / 2);
-            pictureBox1.Location = new Point(pictureBox1.Location.X + ogCenter.X - newCenter.X, pictureBox1.Location.Y - ogCenter.Y + newCenter.Y);
+            newCenter = new Point((pictureBox1.Width) / 2 + pictureBox1.Location.X, pictureBox1.Location.Y + pictureBox1.Height / 2);
+            pictureBox1.Location = new Point(pictureBox1.Location.X + ogCenter.X - newCenter.X, pictureBox1.Location.Y + ogCenter.Y - newCenter.Y);
             
         }
         
